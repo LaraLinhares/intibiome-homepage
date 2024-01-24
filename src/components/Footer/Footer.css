@@ -1,0 +1,73 @@
+.footer {
+  background-color: #389CD6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  margin-bottom: 4em;
+}
+
+.footer-links nav ul {
+  list-style: none;
+  padding: 2em;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.footer-links nav li {
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.footer-links nav li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  right: -4em;
+  color: white;
+  white-space: nowrap; 
+}
+
+.footer-links nav a {
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+}
+
+.social-links {
+  display: flex;
+  gap: 60em;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.social-links p {
+  margin: 0;
+}
+
+.social-links img {
+  max-width: 60%;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-links nav ul {
+    flex-direction: column; /* Altera para uma coluna em telas menores */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .footer-links nav li {
+    flex: none; /* Remove a expansão dos itens para a largura disponível */
+    width: 100%; /* Define a largura como 100% para preencher a tela */
+  }
+}
+
+
+  
