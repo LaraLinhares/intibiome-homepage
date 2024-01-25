@@ -1,14 +1,15 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+
 import './Homepage.css';
+
 import Header from "../components/Header/Header.jsx";
-import Banner from "../images/banner-hero.png";
 import Icons from "../images/icons.png";
 import ProductCard from '../components/ProductCard/ProductCard.jsx';
 
 import PinkMask from "../images/pink-mask.png";
 import GreenMask from "../images/green-mask.png";
 import BlueMask from "../images/blue-mask.png";
-import SecondBanner from "../images/banner2.png";
 
 import WaterScreen from "../images/water-screen.png";
 import Woman1 from "../images/woman-screen.png";
@@ -17,6 +18,11 @@ import Woman2 from "../images/woman-screen2.png";
 import Footer from "../components/Footer/Footer.jsx";
 
 import Button from "../components/Button/Button.jsx";
+
+import BannerDesktop from "../images/banner-hero.png";
+import BannerMobile from "../images/banner-intibiome-02.png"; 
+import SecondBannerDesktop from "../images/banner2.png";
+import SecondBannerMobile from "../images/banner-intibiome-05.png";
 
 
 
@@ -58,16 +64,31 @@ function Homepage() {
     },
   ];
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const bannerImage = windowWidth > 768 ? BannerDesktop : BannerMobile;
+  const secondBannerImage = windowWidth > 768 ? SecondBannerDesktop : SecondBannerMobile;
+
 
   return (
     <>
       <div>
         <Header/>
-        <img src={Banner} alt="Banner" className="banner"/>
+        <img src={bannerImage} alt="Banner" className="banner"/>
       </div>
       
-
-      {/* Ajustar o espaçamento do br */}
       <div className="presentation">
         <h1>we’re here to help</h1>
         <p>When it comes to caring for our most intimate areas, we’ve lost our connection. <br/>
@@ -91,7 +112,7 @@ function Homepage() {
         ))}
       </div>
 
-      <img src={SecondBanner} alt="Second Banner" className="banner"/>
+      <img src={secondBannerImage} alt="Second Banner" className="banner"/>
 
       <div className="presentation">
         <h1>keep up to date with our discoveries</h1>

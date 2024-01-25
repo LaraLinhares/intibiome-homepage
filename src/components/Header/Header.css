@@ -1,6 +1,6 @@
 .upper-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 10vh;
     width: 100%;
@@ -8,23 +8,6 @@
 
 .logo {
     align-self: center;
-}
-
-.search {
-    display: flex;
-    align-items: center; 
-}
-  
-input {
-    border: none; 
-    padding: 0.5em; 
-    outline: none; 
-}
-  
-.search-button {
-    border: none; 
-    background: transparent; 
-    cursor: pointer; 
 }
 
 .main-header{
@@ -54,3 +37,6 @@ nav a {
     text-decoration: none;
     color: #fff;
 }
+
+
+

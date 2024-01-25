@@ -8,12 +8,6 @@ function Header(){
         <>
         <div className="upper-header">
             <img src={Logo} alt="Logo intibiome" className="logo"/>
-            <form className="search">
-                <button className="search-button">
-                    <img src={Search} alt = "Search button"/>
-                </button>
-                <input type="text"/>
-            </form>
         </div>
 
         <header className="main-header">
