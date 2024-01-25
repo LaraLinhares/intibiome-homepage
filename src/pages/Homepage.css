@@ -9,7 +9,6 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 0 20px; 
 }
   
 .presentation h1 {
@@ -51,8 +50,31 @@
   
   .presentation p {
       font-size: 0.9em; 
-      max-width: 100%;
+      max-width: 90%;
   }
+
+  .horizontal-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .horizontal-scroll-container .product-cards-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  html, body, #app {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+  }
+
 }
   
 

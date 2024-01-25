@@ -1,12 +1,15 @@
+// Import components
 import React from 'react';
 import { useState, useEffect } from 'react';
-
 import './Homepage.css';
-
 import Header from "../components/Header/Header.jsx";
-import Icons from "../images/icons.png";
 import ProductCard from '../components/ProductCard/ProductCard.jsx';
+import Footer from "../components/Footer/Footer.jsx";
+import Button from "../components/Button/Button.jsx";
 
+
+// Import images
+import Icons from "../images/icons.png";
 import PinkMask from "../images/pink-mask.png";
 import GreenMask from "../images/green-mask.png";
 import BlueMask from "../images/blue-mask.png";
@@ -14,10 +17,6 @@ import BlueMask from "../images/blue-mask.png";
 import WaterScreen from "../images/water-screen.png";
 import Woman1 from "../images/woman-screen.png";
 import Woman2 from "../images/woman-screen2.png";
-
-import Footer from "../components/Footer/Footer.jsx";
-
-import Button from "../components/Button/Button.jsx";
 
 import BannerDesktop from "../images/banner-hero.png";
 import BannerMobile from "../images/banner-intibiome-02.png"; 
@@ -106,10 +105,12 @@ function Homepage() {
           <h1>our products</h1>
       </div>
 
-      <div className="product-cards-container">
-        {productData.map((product, index) => (
-          <ProductCard key={index} {...product} />
-        ))}
+      <div className="horizontal-scroll-container">
+        <div className="product-cards-container">
+          {productData.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
       </div>
 
       <img src={secondBannerImage} alt="Second Banner" className="banner"/>
@@ -119,10 +120,12 @@ function Homepage() {
 
       </div>
 
-      <div className="product-cards-container">
-        {discoveryData.map((product, index) => (
-          <ProductCard key={index} {...product} />
-        ))}
+      <div className="horizontal-scroll-container">
+        <div className="product-cards-container">
+          {discoveryData.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
+        </div>
       </div>
       
       <div className="presentation"><Button/></div>
