@@ -1,42 +1,117 @@
-.upper-header {
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #ffffff;
+    color: white;
+    padding: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 10vh;
-    width: 100%;
-}
-
-.logo {
-    align-self: center;
-}
-
-.main-header{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 100%;
-    height: 5vh;
-    background: #389CD6 0% 0% no-repeat padding-box;
-    opacity: 1;
-
-}
-
-nav ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
+  }
+  
+  .logo-container {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .logo img {
+    max-width: 100%;
+  }
+  
+  .nav-links {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #389CD6;
+    width: 100%;
+  }
+  
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    padding: 1em;
     margin: 0;
     display: flex;
-    justify-content: center;
-}
+    align-items: center;
+  }
   
-nav li {
-    margin: 0 3em;
-}
+  .nav-links li {
+    margin-right: 10px;
+  }
   
-nav a {
+  .nav-links a {
     text-decoration: none;
-    color: #fff;
-}
+    color: white;
+    margin: 3em;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+  }
 
 
+@media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px; 
+      left: 0;
+      width: 100%;
+      background-color: #389CD6;
+    }
+  
+    .nav-links.show {
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+    }
+  
+    .nav-links ul {
+      list-style: none;
+      align-items:first baseline;
+      flex-direction: column;
+    }
+  
+    .nav-links li {
+      margin: 0;
+      padding: 15px;
+      width: 100%;
+    }
+  
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      margin: 0;
+    }
+  
+    .menu-toggle {
+      display: flex;
+      margin-right: 15px; 
+    }
 
+    .bar {
+      width: 2em;
+      height: 0.2em;
+      background-color: #777; 
+      margin: 0.2em 0;
+    }
+  }
