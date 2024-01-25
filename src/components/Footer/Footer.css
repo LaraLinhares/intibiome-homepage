@@ -27,18 +27,12 @@
   position: relative;
 }
 
-.footer-links nav li:not(:last-child)::after {
-  content: "|";
-  position: absolute;
-  right: -4em;
-  color: white;
-  white-space: nowrap; 
-}
-
 .footer-links nav a {
   text-decoration: none;
   color: white;
   white-space: nowrap;
+  padding: 1em;
+
 }
 
 .social-links {
